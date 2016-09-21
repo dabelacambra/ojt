@@ -64,9 +64,9 @@ $result=mysqli_query($con,"select t1.id ,t1.`name`, t1.category, t1.url, t1.assi
 										?>
 										<tr>
 											<td>
-											    <a href="is_view.php?id=<?php echo $row['id']  ?>"><button type=button class = "btn btn-info btn-xs"><span class="glyphicon glyphicon-zoom-in">View</button></a>
-												<a href="is_edit.php?id=<?php echo $row['id'] ?>"><button type=button class = "btn btn-success btn-xs"><span class="glyphicon glyphicon-edit">Edit</span></button></a>
-	                                            <a href="is_delete.php?id=<?php echo $row['id']  ?>" onclick="return confirm('are you sure?');"><button type=button class = "btn btn-danger btn-xs"> <span class="glyphicon glyphicon-remove"></span>Delete</button></a>
+											    <a href="is_delete.php?id=<?php echo $row['id']  ?>" onclick="return confirm('are you sure?');"><button type=button class = "btn btn-danger btn-xs"> <span class="glyphicon glyphicon-remove"></span></button></a>
+											    <a href="is_view.php?id=<?php echo $row['id']  ?>"><button type=button class = "btn btn-info btn-xs"><span class="glyphicon glyphicon-zoom-in"></span>View</button></a>
+												<a href="is_edit.php?id=<?php echo $row['id'] ?>"><button type=button class = "btn btn-success btn-xs"><span class="glyphicon glyphicon-edit"></span>Edit</button></a>
 												</td>
 												 	
 											</td>

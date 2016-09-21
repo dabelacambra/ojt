@@ -73,8 +73,8 @@ $result_doc=mysqli_query($con,"select * from tbl_is_log");
 <?php
 mysqli_close($con); 
 ?>
-<a href="log_edit.php?id=<?php echo $id ?>"><button type="button" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-edit">Edit</span></button></a>
-<a href="log_list.php"><button type="button" class="btn btn- btn-xs"><span class="glyphicon glyphicon-list">Back</span></button></a>
+<a href="log_edit.php?id=<?php echo $id ?>"><button type="button" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-edit"></span>Edit</button></a>
+<a href="javascript:history.back()"><button type="button" class="btn btn- btn-xs"><span class="glyphicon glyphicon-list"></span>Back</button></a>
 
                                     </form>
                                 </div>

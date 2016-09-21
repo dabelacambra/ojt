@@ -62,7 +62,7 @@ echo "<script type='text/javascript'>alert('This file ". basename( $_FILES['uplo
 	&times;</button></a>
     <strong>Success! </strong>
 	Record has been updated<br>
-    <a href="doc_list.php"><button type="button" class="btn btn-"><span class="glyphicon glyphicon-ok">OK</span></button></a>
+    <a href="doc_list.php"><button type="button" class="btn btn-"><span class="glyphicon glyphicon-ok"></span>OK</button></a>
 	</span>
 	</div>';
  } else { 

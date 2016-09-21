@@ -61,8 +61,8 @@ $result=mysqli_query($con,"select * FROM tbl_is_log");
 									
 											<td>
 												<a href="log_delete.php?id=<?php echo $row['id'] ?>" onclick="return confirm('are you sure?');"> <button type="button" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span></button>
-												<a href="log_view.php?id=<?php echo $row['id'] ?>"><button type="button" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-zoom-in">View</span></button></a>
-												<a href="log_edit.php?id=<?php echo $row['id'] ?>"><button type="button" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-edit">Edit</span></button></a>
+												<a href="log_view.php?id=<?php echo $row['id'] ?>"><button type="button" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-zoom-in"></span>View</button></a>
+												<a href="log_edit.php?id=<?php echo $row['id'] ?>"><button type="button" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-edit"></span>Edit</button></a>
 											</td>
 										
 											<td><a href="../profile/is_view.php?id=<?php echo $row['is_id'] ?>"><?php echo $row['is_id'] ?></a></td>

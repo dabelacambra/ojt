@@ -23,7 +23,7 @@ $result=mysqli_query($con,"SELECT * FROM tbl_is_log WHERE id = '$id'");
                     <h1 class="page-header">Info System
 					<small>
 						<i class="icon-double-angle-right"></i>
-							>> View Record
+							>> Edit
 						</small>
 					</h1>
                 </div>
@@ -83,8 +83,10 @@ $result=mysqli_query($con,"SELECT * FROM tbl_is_log WHERE id = '$id'");
 </input>
 </div>
 
-                                         <button type="submit" class="btn btn-info">Submit</button>
-                                        <button type="reset" class="btn btn-success">Reset</button><?php } ?>
+                 <button type="submit" class="btn btn-info">Submit</button>
+                 <button type="reset" class="btn btn-success">Reset</button>
+				 <a href="javascript:history.back()"><button type="button" class="btn btn-success">Cancel</a>
+<?php } ?>
 <?php mysqli_close($con); ?>
                                     </form>
 									<script>

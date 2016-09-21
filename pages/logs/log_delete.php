@@ -38,7 +38,7 @@ mysqli_query($con,"DELETE FROM tbl_is_log WHERE id = '$id'");
 	&times;</button></a>
     <strong>Deleted! </strong>
 	Record has been updated<br>
-    <a href="log_list.php"><button type="button" class="btn btn-"><span class="glyphicon glyphicon-ok">OK</span></button></a>
+    <a href="log_list.php"><button type="button" class="btn btn-"><span class="glyphicon glyphicon-ok"></span>OK</button></a>
 	</span>
 	</div>';
 	

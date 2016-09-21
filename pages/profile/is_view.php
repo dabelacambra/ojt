@@ -236,7 +236,7 @@ while ($rw=mysqli_fetch_array($result3)) {
 <?php
 mysqli_close($con); 
 ?>	
-<td><a href="javascript:history.back()"><button type=button class = "btn btn-success">BACK</button></a></td>	
+<td><a href="javascript:history.back()"><button type="button" class="btn btn-success">Back</button></a></td>	
  
   <ul class="pager">
 </ul>  

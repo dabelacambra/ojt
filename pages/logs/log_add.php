@@ -83,7 +83,7 @@ $result=mysqli_query($con,"select * FROM tbl_is");
                                         								
                                          <a href="log_list.php"><button type="submit" class="btn btn-info">Submit</button></a>
                                         <button type="reset" class="btn btn-success">Reset</button>
-										<a href="log_list.php"><button type=button class = "btn btn-info btn">LIST</button></a>
+										<a href="javascript:history.back()"><button type="button" class = "btn btn-info btn">Cancel</button></a>
                                     </form>
 <script>
 function submitform() {

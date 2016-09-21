@@ -61,13 +61,14 @@ die ('error in db: '. mysqli_error($con));
 if(move_uploaded_file($_FILES['uploaded']['tmp_name'], $target)) { 
 
 echo "<script type='text/javascript'>alert('This file ". basename( $_FILES['uploaded']['name']) ." has been uploaded.'); </script>";     
-    echo '<div class="alert alert-success" id="success-alert">
+    echo 
+	echo '<div class="alert alert-success" id="success-alert">
     <span class="centered">
 	<a href="doc_list.php"><button type="button" class="close" data-dismiss="alert" aria-label="close">
 	&times;</button></a>
     <strong>Success! </strong>
 	Record has been added<br>
-    <a href="doc_list.php"><button type="button" class="btn btn-"><span class="glyphicon glyphicon-ok">OK</span></button></a>
+    <a href="doc_list.php"><button type="button" class="btn btn-"><span class="glyphicon glyphicon-ok"></span>OK</button></a>
 	</span>
 	</div>';
  } else { 

@@ -6,7 +6,7 @@
                     <h1 class="page-header">IS Change Logs
 						<small>
 						<i class="icon-double-angle-right"></i>
-							>> Edit
+							>> Edit Record
 						</small>
 					</h1>
                 </div>
@@ -39,7 +39,7 @@ $sql="UPDATE tbl_is_log SET log_name='$ln',log_type='$lt',log_description='$ld',
 	&times;</button></a>
     <strong>Success! </strong>
 	Record has been updated<br>
-    <a href="log_list.php"><button type="button" class="btn btn-"><span class="glyphicon glyphicon-ok">OK</span></button></a>
+    <a href="log_list.php"><button type="button" class="btn btn-"><span class="glyphicon glyphicon-ok"></span>OK</button></a>
 	</span>
 	</div>';
 mysqli_close($con); // closes the connection to the database

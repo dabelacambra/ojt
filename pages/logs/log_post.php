@@ -40,7 +40,7 @@ $sql="INSERT INTO tbl_is_log (id,is_id,log_name,log_type,log_description,date_up
 	&times;</button></a>
     <strong>Success! </strong>
 	Record has been added<br>
-    <a href="log_list.php"><button type="button" class="btn btn-"><span class="glyphicon glyphicon-ok">OK</span></button></a>
+    <a href="log_list.php"><button type="button" class="btn btn-"><span class="glyphicon glyphicon-ok"></span>OK</button></a>
 	</span>
 	</div>';
 	
