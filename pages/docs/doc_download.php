@@ -1,3 +1,11 @@
+<?php
+  session_start();
+  if(!isset($_SESSION['sees_username']) && !isset($_SESSION['sees_password']))
+  {
+    header("location: ../login.php");
+    exit;
+  }
+?>
 <?php 
    
 $path = $_SERVER['DOCUMENT_ROOT']."/ismp/pages/docs/documents/"; 

@@ -1,3 +1,11 @@
+<?php
+  session_start();
+  if(!isset($_SESSION['sees_username']) && !isset($_SESSION['sees_password']))
+  {
+    header("location: ../login.php");
+    exit;
+  }
+?>
 <?php 
  $target = "documents/"; 
  $target = $target . basename( $_FILES['uploaded']['name']) ; 

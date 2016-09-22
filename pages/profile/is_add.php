@@ -1,8 +1,11 @@
-<?php 
-
-$uniqid=substr(uniqid(rand(10,1000),false),rand(0,10),6); 
+<?php
+  session_start();
+  if(!isset($_SESSION['sees_username']) && !isset($_SESSION['sees_password']))
+  {
+    header("location: ../login.php");
+    exit;
+  }
 ?>
-
 <?php
 
 
@@ -43,7 +46,6 @@ $result_rdbms=mysqli_query($con,"select * from lib_rdbms");
                             Add New Record
                         </div>
 					<form name="form" action="is_collect.php" method="post"  onsubmit="submitform()">
-					<input type="hidden" name="id" value="<?php echo $uniqid ?>">
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-4">

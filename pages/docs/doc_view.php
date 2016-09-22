@@ -1,6 +1,12 @@
+<?php
+session_start();
+  if(!isset($_SESSION['sees_username']) && !isset($_SESSION['sees_password']))
+  {
+    header("location: ../login.php");
+    exit;
+  }
+?>
 <?php include_once "../template/header.php" ?>
-            <!-- /.navbar-static-side -->
-        </nav>
 
         <div id="page-wrapper">
             <div class="row">
@@ -8,7 +14,7 @@
                     <h1 class="page-header">Info System Documents
 						<small>
 						<i class="icon-double-angle-right"></i>
-							 View record
+							 View
 						</small>
 					</h1>
                 </div>
@@ -65,8 +71,8 @@ $result_view=mysqli_query($con,"select * from tbl_is_doc where id = '$id'");
 <?php
 mysqli_close($con); 
 ?>
-<a href="doc_edit.php?id=<?php echo $id ?>"><button type="button" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-edit"></span>Edit</button></a>
-<a href="javascript:history.back()"><button type="button" class="btn btn- btn-xs"><span class="glyphicon glyphicon-list"></span>Back</button></a>
+<a href="doc_edit.php?id=<?php echo $id ?>"><button type="button" class="btn btn-success"><span class="glyphicon glyphicon-edit"></span>Edit</button></a>
+<a href="javascript:history.back()"><button type="button" class="btn btn-"><span class="glyphicon glyphicon-list"></span>Back</button></a>
 
             <!-- /.row -->
 			<div class="row">

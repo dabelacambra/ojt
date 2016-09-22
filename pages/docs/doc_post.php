@@ -1,11 +1,10 @@
 <?php
-session_start();
-
-if(!isset($_SESSION['sees_username'])){
-	header("location: ../login.php");
-} else {
-	echo "<script type='text/javascript'>alert('You are logged in as ". $_SESSION['sees_username'] ."'); </script>";
-}
+  session_start();
+  if(!isset($_SESSION['sees_username']) && !isset($_SESSION['sees_password']))
+  {
+    header("location: ../login.php");
+    exit;
+  }
 ?>
 <?php include_once "../template/header.php" ?>
         <div id="page-wrapper">
@@ -14,7 +13,7 @@ if(!isset($_SESSION['sees_username'])){
                     <h1 class="page-header">IS Documents
 						<small>
 						<i class="icon-double-angle-right"></i>
-							>> Add
+							 Add
 						</small>
 					</h1>
                 </div>
@@ -24,7 +23,7 @@ if(!isset($_SESSION['sees_username'])){
                     <span class="pull-left"></span>
 <?php 
 
-$target = "documents//"; 
+$target = "documents/"; 
     if(!is_dir($target)) mkdir($target);
 $target = $target . basename( $_FILES['uploaded']['name']); 
 $ok=1;
@@ -61,14 +60,13 @@ die ('error in db: '. mysqli_error($con));
 if(move_uploaded_file($_FILES['uploaded']['tmp_name'], $target)) { 
 
 echo "<script type='text/javascript'>alert('This file ". basename( $_FILES['uploaded']['name']) ." has been uploaded.'); </script>";     
-    echo 
+ 
 	echo '<div class="alert alert-success" id="success-alert">
     <span class="centered">
 	<a href="doc_list.php"><button type="button" class="close" data-dismiss="alert" aria-label="close">
 	&times;</button></a>
     <strong>Success! </strong>
-	Record has been added<br>
-    <a href="doc_list.php"><button type="button" class="btn btn-"><span class="glyphicon glyphicon-ok"></span>OK</button></a>
+	Record has been added
 	</span>
 	</div>';
  } else { 

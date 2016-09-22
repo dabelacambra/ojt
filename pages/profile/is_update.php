@@ -1,3 +1,11 @@
+<?php
+  session_start();
+  if(!isset($_SESSION['sees_username']) && !isset($_SESSION['sees_password']))
+  {
+    header("location: ../login.php");
+    exit;
+  }
+?>
 <?php include_once "../template/header.php" ?>
 
   <?php include_once "../template/sidebar_menu.php" ?>
@@ -45,13 +53,14 @@ $sql="UPDATE tbl_is SET name='$name',`category`='$category',`desc`='$desc',track
 		die ('error in db: '. mysqli_error($con)); 
 		}
 	
-	   echo '<div class="alert alert-success" id="success-alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="close"><span aria-hidden="true">&times;</span></button>
+echo '<div class="alert alert-success" id="success-alert">
+    <span class="centered">
+	<a href="is_list.php"><button type="button" class="close" data-dismiss="alert" aria-label="close">
+	&times;</button></a>
     <strong>Success! </strong>
 	Record has been updated
+	</span>
 	</div>';
-    echo '<a href="is_list.php"><button type="button" class="btn btn-"><span class="glyphicon glyphicon-edit">List</span></button></a>';
-		
 mysqli_close($con); // closes the connection to the database
 ?>
                 </div>

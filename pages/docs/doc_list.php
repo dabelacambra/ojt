@@ -1,4 +1,11 @@
-
+<?php
+session_start();
+  if(!isset($_SESSION['sees_username']) && !isset($_SESSION['sees_password']))
+  {
+    header("location: ../login.php");
+    exit;
+  }
+?>
 <?php
 include "../../config.php";
 $result=mysqli_query($con,"select * from tbl_is_doc");
@@ -46,7 +53,7 @@ while ($row=mysqli_fetch_array($result)) {
 	<td>
 	<a href="doc_delete.php?id=<?php echo $row['id'] ?>" onclick="return confirm('are you sure?');"> <button type="button" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span></button>
     <a href="doc_view.php?id=<?php echo $row['id'] ?>"><button type="button" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-zoom-in"></span>View</button>
-	<a href="doc_edit.php?id=<?php echo $row['id'] ?>"><button type="button" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-edit"></span>Edit</button>
+	<a href="doc_edit.php?id=<?php echo $row['id'] ?>"><button type="button" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-edit"></span>Edit</button></br>
 	<a href="doc_download.php?download_file=<?php echo $row ['name'] ?>" target="_self"><button type="button" class="btn btn- btn-xs"><span class="glyphicon glyphicon-download-alt"></span>Download File</button></a>
 	</td>
 	<td><a href="../profile/is_view.php?id=<?php echo $row['isid'] ?> "><?php echo $row['isid'] ?></a></td>

@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-echo "<script type='text/javascript'>alert ('Logout Successfully!');</script>";
 session_destroy();
-header("location: login.php");
+echo "<script type='text/javascript'>alert ('Goodbye ". $_SESSION['sees_username'] ."!'); document.location.href='login.php' </script>";
 ?>

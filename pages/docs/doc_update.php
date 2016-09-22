@@ -1,4 +1,12 @@
 <?php
+  session_start();
+  if(!isset($_SESSION['sees_username']) && !isset($_SESSION['sees_password']))
+  {
+    header("location: ../login.php");
+    exit;
+  }
+?>
+<?php
 session_start();
 
 if(!isset($_SESSION['sees_username'])){
@@ -15,7 +23,7 @@ if(!isset($_SESSION['sees_username'])){
                     <h1 class="page-header">IS Documents
 						<small>
 						<i class="icon-double-angle-right"></i>
-							>> Edit
+							 Edit
 						</small>
 					</h1>
                 </div>
@@ -23,7 +31,7 @@ if(!isset($_SESSION['sees_username'])){
             </div>
             <!-- /.row -->
 <?php
-$target = "documents//"; 
+$target = "documents/"; 
 if(!is_dir($target)) mkdir($target);
 $target = $target . basename( $_FILES['uploaded']['name']); 
 $ok=1;
@@ -61,8 +69,7 @@ echo "<script type='text/javascript'>alert('This file ". basename( $_FILES['uplo
 	<a href="doc_list.php"><button type="button" class="close" data-dismiss="alert" aria-label="close">
 	&times;</button></a>
     <strong>Success! </strong>
-	Record has been updated<br>
-    <a href="doc_list.php"><button type="button" class="btn btn-"><span class="glyphicon glyphicon-ok"></span>OK</button></a>
+	Record has been updated
 	</span>
 	</div>';
  } else { 

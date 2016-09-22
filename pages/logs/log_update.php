@@ -1,3 +1,11 @@
+<?php
+  session_start();
+  if(!isset($_SESSION['sees_username']) && !isset($_SESSION['sees_password']))
+  {
+    header("location: ../login.php");
+    exit;
+  }
+?>
 <?php include_once "../template/header.php" ?>
 
         <div id="page-wrapper">
@@ -35,11 +43,10 @@ $sql="UPDATE tbl_is_log SET log_name='$ln',log_type='$lt',log_description='$ld',
 	
 	echo '<div class="alert alert-success" id="success-alert">
     <span class="centered">
-	<a href="doc_list.php"><button type="button" class="close" data-dismiss="alert" aria-label="close">
+	<a href="log_list.php"><button type="button" class="close" data-dismiss="alert" aria-label="close">
 	&times;</button></a>
     <strong>Success! </strong>
-	Record has been updated<br>
-    <a href="log_list.php"><button type="button" class="btn btn-"><span class="glyphicon glyphicon-ok"></span>OK</button></a>
+	Record has been updated
 	</span>
 	</div>';
 mysqli_close($con); // closes the connection to the database

@@ -1,11 +1,10 @@
 <?php
 session_start();
-
-if(!isset($_SESSION['sees_username'])){
-	header("location: ../login.php");
-} else {
-	echo "<script type='text/javascript'>alert('You are logged in as ". $_SESSION['sees_username'] ."'); </script>";
-}
+  if(!isset($_SESSION['sees_username']) && !isset($_SESSION['sees_password']))
+  {
+    header("location: ../login.php");
+    exit;
+  }
 ?>
 <?php include_once "../template/header.php" ?>
         <div id="page-wrapper">
@@ -14,7 +13,7 @@ if(!isset($_SESSION['sees_username'])){
                     <h1 class="page-header">IS Documents
 						<small>
 						<i class="icon-double-angle-right"></i>
-							>> Delete
+							 Delete
 						</small>
 					</h1>
                 </div>
@@ -37,8 +36,7 @@ echo '<div class="alert alert-danger" id="success-alert">
     <a href="doc_list.php"><button type="button" class="close" data-dismiss="alert" aria-label="close">
 	&times;</button></a>
     <strong>Deleted! </strong>
-	Record has been updated<br>
-    <a href="doc_list.php"><button type="button" class="btn btn-"><span class="glyphicon glyphicon-ok"></span>OK</button></a>
+	Record has been deleted
 	</span>
 	</div>';
 

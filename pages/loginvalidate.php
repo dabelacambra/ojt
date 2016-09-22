@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-$username = $_REQUEST['username'];
-$password = $_REQUEST['password'];
+include "../config.php"; //database connection
 
-$con = mysqli_connect("localhost","root","","ismp");
+$username = $_REQUEST['username']; //information from login form
+$password = $_REQUEST['password']; //information from login form
 
 $sql = "SELECT uid,username,password FROM tbl_user WHERE username='$username' AND password='$password'";
 
@@ -12,12 +12,11 @@ $result = mysqli_query($con,$sql);
 
 $login_variables = mysqli_fetch_array($result);
 
-$_SESSION = array(
-    'sess_username' => $login_variables['username']
-);
+$_SESSION['sees_username']=$login_variables['username'];
+$_SESSION['sees_password']=$login_variables['password'];
 
-if(isset($_SESSION['sees_username'])){
-	header ("location: ../index.php");
+if(isset($_SESSION['sees_username']) && isset($_SESSION['sees_password'])){
+	echo "<script type='text/javascript'>alert ('You are now logged in as ". $_SESSION['sees_username'] ."'); document.location.href='../index.php' </script>";
 } else {
 	echo "<script type='text/javascript'>alert ('Sorry! Cannot login.'); document.location.href='javascript: history.go(-1)'</script>";
 	exit;

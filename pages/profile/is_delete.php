@@ -1,4 +1,12 @@
- <?php include_once "../template/header.php"?>
+<?php
+  session_start();
+  if(!isset($_SESSION['sees_username']) && !isset($_SESSION['sees_password']))
+  {
+    header("location: ../login.php");
+    exit;
+  }
+?>
+<?php include_once "../template/header.php"?>
 
           <?php include_once "../template/sidebar_menu.php"?>
  
@@ -16,7 +24,7 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
-                    <span class="pull-left">
+                    <span class="pull-left"></span>
 
 <?php
 
@@ -28,16 +36,18 @@ $id=$_REQUEST['id'];
 include "../../config.php";
 mysqli_query($con,"DELETE FROM tbl_is WHERE id ='$id'");
 
-
-		echo "delete success!";
-		echo '<a href="is_list.php">LIST</a>';
+echo '<div class="alert alert-danger" id="success-alert">
+    <span class="centered">
+	<a href="is_list.php"><button type="button" class="close" data-dismiss="alert" aria-label="close">
+	&times;</button></a>
+    <strong>Deleted! </strong>
+	Record has been deleted!
+	</span>
+	</div>';
 		
 mysqli_close($con);
 ?>
-					
-					
-					
-					</span>
+				
             <!-- /.row -->
 			<div class="row">
 			</div>

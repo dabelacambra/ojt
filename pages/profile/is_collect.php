@@ -1,3 +1,11 @@
+<?php
+  session_start();
+  if(!isset($_SESSION['sees_username']) && !isset($_SESSION['sees_password']))
+  {
+    header("location: ../login.php");
+    exit;
+  }
+?>
 <?php include_once "../template/header.php" ?>
 
          <?php include_once "../template/sidebar_menu.php" ?>
@@ -19,7 +27,6 @@
                     <span class="pull-left"></span>
 				
 <?php 
-$id = $_REQUEST ['id'];
 $category = $_REQUEST['category'];
 $name = $_REQUEST['name'];
 $desc = $_REQUEST['desc'];

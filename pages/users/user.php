@@ -1,11 +1,19 @@
+<?php
+  session_start();
+  if(!isset($_SESSION['sees_username']) && !isset($_SESSION['sees_password']))
+  {
+    header("location: ../login.php");
+    exit;
+  }
+?>
 <?php include_once "../template/header.php" ?>
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">IS Documents
+                    <h1 class="page-header">IS
 						<small>
 						<i class="icon-double-angle-right"></i>
-							>> Profile
+							 Profile
 						</small>
 					</h1>
                 </div>
@@ -17,7 +25,7 @@
                     <span class="pull-left"></span>
 <?php
 include "../../config.php";
-$result=mysqli_query($con,"select * from tbl_user limit 1");
+$result=mysqli_query($con,"select * from tbl_user where username='sees_username'");
 ?>
 <?php
 while($row=mysqli_fetch_array($result)){

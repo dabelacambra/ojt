@@ -22,7 +22,7 @@
                             <a href="../../pages/logs/log_list.php"><i class="fa fa-edit fa-fw"></i> IS Change Logs</a>
                         </li>
                         <li>
-                            <a href="logout.php" onclick="are you sure?"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                            <a href="../logout.php?"'. SID . ' onclick="are you sure?"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                 </div>

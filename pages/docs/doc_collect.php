@@ -1,11 +1,10 @@
 <?php
-session_start();
-
-if(!isset($_SESSION['sees_username'])){
-	header("location: ../login.php");
-} else {
-	echo "<script type='text/javascript'>alert('You are logged in as ". $_SESSION['sees_username'] ."'); </script>";
-}
+  session_start();
+  if(!isset($_SESSION['sees_username']) && !isset($_SESSION['sees_password']))
+  {
+    header("location: ../login.php");
+    exit;
+  }
 ?>
 <?php include_once "../template/header.php" ?>
 <?php
@@ -20,7 +19,7 @@ $result_uploader=mysqli_query($con,"select * from lib_uploader");
                     <h1 class="page-header">IS Documents
 						<small>
 						<i class="icon-double-angle-right"></i>
-							>> Add File
+							 Add
 						</small>
 					</h1>
                 </div>
