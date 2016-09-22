@@ -23,29 +23,7 @@
             <div class="row">
                 <div class="col-lg-3 col-md-9">
                     <span class="pull-left"></span>
-<?php
-include "../../config.php";
-$result=mysqli_query($con,"select * from tbl_user");
-?>
-<?php
-while($row=mysqli_fetch_array($result)){
-?>
-<div class="profile">
-<div class="row clearfix">
-<div>
-<center>
-<img src="#" class="image-responsive profile-avatar">
-<br>
-<div class="button-group">
-<button href="#">Change Password</button>
-<button href="#">#</button>
-</div>
-</center>
-</div>
-</div>
-</div>
-<?php } ?>
-					</div>
+				</div>
             </div>
             <!-- /.row -->
 			<div class="row">

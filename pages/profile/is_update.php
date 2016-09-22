@@ -23,9 +23,8 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-3 col-md-9">
-                   <?php
+			 <span class="pull-left"></span>
+<?php
 $id = $_REQUEST ['id'];
 $name = $_REQUEST['name'];
 $category = $_REQUEST['category'];
@@ -45,7 +44,7 @@ $businessOwner = $_REQUEST['business_owner'];
 
 include "../../config.php";
 
-$sql="UPDATE tbl_is SET name='$name',`category`='$category',`desc`='$desc',tracker='$tracker',`access`='$access',`front_end`='$frontEnd',`rdbms`='$rdbms',`url`='$url',`cron`='$cron',`Api`='$api',training_url='$trainingUrl',last_va='$lastVa',remarks='$remarks',assigned_to='$assignedTo',business_owner='$businessOwner' WHERE id ='$id'";
+$sql="UPDATE tbl_is SET name='$name',`category`='$category',`desc`='$desc',tracker='$tracker',`access`='$access',`front_end`='$frontEnd',`rdbms`='$rdbms',`url`='$url',`cron`='$cron',`api`='$Api',training_url='$trainingUrl',last_va='$lastVa',remarks='$remarks',assigned_to='$assignedTo',business_owner='$businessOwner' WHERE id ='$id'";
 	
 		
 
@@ -63,8 +62,6 @@ echo '<div class="alert alert-success" id="success-alert">
 	</div>';
 mysqli_close($con); // closes the connection to the database
 ?>
-                </div>
-            </div>
             <!-- /.row -->
 			<div class="row">
 			</div>

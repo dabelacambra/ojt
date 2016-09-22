@@ -45,7 +45,7 @@ $result_rdbms=mysqli_query($con,"select * from lib_rdbms");
                         <div class="panel-heading">
                             Add New Record
                         </div>
-					<form name="form" action="is_collect.php" method="post"  onsubmit="submitform()">
+					<form name="form" action="is_collect.php" method="post">
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-4">
