@@ -26,7 +26,7 @@
                     <span class="pull-left"></span>
 					
 	
-	<?php
+<?php
 
 $id=$_REQUEST['id'];
 

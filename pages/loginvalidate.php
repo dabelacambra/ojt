@@ -6,7 +6,7 @@ include "../config.php"; //database connection
 $username = $_REQUEST['username']; //information from login form
 $password = $_REQUEST['password']; //information from login form
 
-$sql = "SELECT uid,username,password FROM tbl_user WHERE username='$username' AND password='$password'";
+$sql = "SELECT uid,username,password FROM tbl_user WHERE username='$username' AND password='$password'"; //remove password checker if the password is hashed, create new if statement for it.
 
 $result = mysqli_query($con,$sql);
 
