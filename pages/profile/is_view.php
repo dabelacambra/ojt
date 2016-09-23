@@ -151,7 +151,6 @@ LIMIT 1");
      </table>
 	 </div>
       </div>
-<?php } ?>
 <?php
 $result2=mysqli_query($con,"select * from tbl_is INNER JOIN tbl_is_doc on tbl_is.id = tbl_is_doc.isid WHERE tbl_is.id=$id");
 ?>
@@ -167,7 +166,7 @@ $result2=mysqli_query($con,"select * from tbl_is INNER JOIN tbl_is_doc on tbl_is
 <thead>
 <tr>
     <th class="col-xs">Action</th>
-	<th class="col-xs">Info System ID</th>
+	<th class="col-xs">Info System Name</th>
 	<th class="col-xs">File Name</th>
 	<th class="col-xs">Size(bytes)</th>
 	<th class="col-xs">Type</th>
@@ -182,7 +181,7 @@ while ($rws=mysqli_fetch_array($result2)) {
     <a href="../docs/doc_view.php?id=<?php echo $rws['id'] ?>"><button type="button" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-zoom-in">View</span></button>
 	<a href="../docs/doc_edit.php?id=<?php echo $rws['id'] ?>"><button type="button" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-edit">Edit</span></button>
 	</td>
-	<td><?php echo $rws['isid'] ?></td>
+	<td><?php echo $row['name'] ?></td>
 	<td><a href="../docs/doc_view.php?id=<?php echo $rws['id'] ?>"><?php echo $rws['name'] ?></a></td>
 	<td><?php echo $rws['size'] ?></td>
 	<td><?php echo $rws['type'] ?></td>
@@ -211,7 +210,7 @@ $result3=mysqli_query($con,"select * from tbl_is INNER JOIN tbl_is_log on tbl_is
 <thead>
 <tr>
     <th class="col-xs">Action</th>
-	<th class="col-xs">Info System ID</th>
+	<th class="col-xs">Info System Name</th>
 	<th class="col-xs">Log Name</th>
 	<th class="col-xs">Log Type</th>
 	<th class="col-xs">Log Description</th>
@@ -227,7 +226,7 @@ while ($rw=mysqli_fetch_array($result3)) {
     <a href="../logs/log_view.php?id=<?php echo $rw['id'] ?>"><button type="button" class="btn btn-info btn-xs"><span class="glyphicon glyphicon-zoom-in">View</span></button>
 	<a href="../logs/log_edit.php?id=<?php echo $rw['id'] ?>"><button type="button" class="btn btn-success btn-xs"><span class="glyphicon glyphicon-edit">Edit</span></button>
 	</td>
-	<td><?php echo $rw['is_id'] ?></td>
+	<td><?php echo $row['name'] ?></td>
 	<td><a href="../logs/log_view.php?id=<?php echo $rw['id'] ?>"><?php echo $rw['log_name'] ?></a></td>
 	<td><?php echo $rw['log_type'] ?></td>
 	<td><?php echo $rw['log_description'] ?></td>
@@ -241,6 +240,7 @@ while ($rw=mysqli_fetch_array($result3)) {
 </div>
 </div>
 </div>
+<?php } ?>
 <?php
 mysqli_close($con); 
 ?>	

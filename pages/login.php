@@ -59,6 +59,7 @@ session_start();
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
                                 <button type="submit" name="login" class="btn btn-lg btn-success btn-block">Login</button>
+								<a href="register.php"><button type="button" class="btn btn-lg btn-info btn-block">Register</button></a>
                             </fieldset>
                         </form>
                     </div>
