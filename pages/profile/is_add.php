@@ -141,10 +141,6 @@ $result_rdbms=mysqli_query($con,"select * from lib_rdbms");
                                             <input class="form-control" name = "training_url"placeholder="http//:" required">
 											</div>
 										<div class="form-group">
-											<label for="disabledSelect">Last VA</label>
-											<input class="form-control" type="date"  name = "last_va" required>
-										</div>
-										<div class="form-group">
                                             <label>Remarks</label>
                                             <textarea class="form-control" name = "remarks" rows="3"placeholder="Please insert Remarks"></textarea>
                                         </div>

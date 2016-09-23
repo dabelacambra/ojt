@@ -41,7 +41,7 @@ session_start();
             <div class="col-md-4 col-md-offset-4">
                 <div class="login-panel panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Please Sign In</h3>
+                        <h3 class="panel-title"><strong>ISMP </strong>Login</h3>
                     </div>
                     <div class="panel-body">
                         <form role="form" action="loginvalidate.php" method="get">
@@ -59,7 +59,7 @@ session_start();
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
                                 <button type="submit" name="login" class="btn btn-lg btn-success btn-block">Login</button>
-								<a href="register.php"><button type="button" class="btn btn-lg btn-info btn-block">Register</button></a>
+								<a href="register.php" role="button" class="btn btn-lg btn-default btn-block">Register</button></a>
                             </fieldset>
                         </form>
                     </div>

@@ -6,15 +6,6 @@
     exit;
   }
 ?>
-<?php
-session_start();
-
-if(!isset($_SESSION['sees_username'])){
-	header("location: ../login.php");
-} else {
-	echo "<script type='text/javascript'>alert('You are logged in as ". $_SESSION['sees_username'] ."'); </script>";
-}
-?>
 <?php include "../../config.php"; ?>
 <?php include_once "../template/header.php" ?>
         <div id="page-wrapper">

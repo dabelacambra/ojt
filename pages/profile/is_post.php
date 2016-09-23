@@ -37,7 +37,6 @@ $url = $_REQUEST['url'];
 $cron = $_REQUEST['cron'];
 $Api = $_REQUEST['api'];
 $training_url = $_REQUEST['training_url'];
-$last_va = $_REQUEST['last_va'];
 $remarks = $_REQUEST['remarks'];
 $assigned_to = $_REQUEST['assigned_to'];
 $business_owner = $_REQUEST['business_owner'];
@@ -45,7 +44,7 @@ $business_owner = $_REQUEST['business_owner'];
 <?php
 include "../../config.php";
 $sql="INSERT INTO tbl_is (`name`,category,`desc`,`tracker`,`access`,front_end,rdbms,url,cron,api,`training_url`,last_va,remarks,`assigned_to`,`business_owner`)
-VALUES ('$name','$category','$desc','$tracker','$access','$front_end','$rdbms','$url','$cron','$Api','$training_url','$last_va','$remarks','$assigned_to','$business_owner');";
+VALUES ('$name','$category','$desc','$tracker','$access','$front_end','$rdbms','$url','$cron','$Api','$training_url',now(),'$remarks','$assigned_to','$business_owner');";
 		
 
 if (!mysqli_query($con,$sql)) { 

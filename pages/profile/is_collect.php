@@ -38,7 +38,6 @@ $url = $_REQUEST['url'];
 $cron = $_REQUEST['cron'];
 $Api = $_REQUEST['api'];
 $training_url = $_REQUEST['training_url'];
-$last_va = $_REQUEST['last_va'];
 $remarks = $_REQUEST['remarks'];
 $assigned_to = $_REQUEST['assigned_to'];
 $business_owner = $_REQUEST['business_owner'];
@@ -126,12 +125,6 @@ $business_owner = $_REQUEST['business_owner'];
 	<tr>
 	<th>Training_url</th>
 	<td><?php echo $training_url ?></td>
-	</tr>
-	</div>
-		<div class="row">
-	<tr>
-	<th>Last_va</th>
-	<td><?php echo $last_va ?></td>
 	</tr>
 	</div>
 		<div class="row">
