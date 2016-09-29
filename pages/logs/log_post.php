@@ -23,23 +23,21 @@
             <!-- /.row -->
                    <?php
 $id=$_REQUEST['id'];				   
-$isid=$_REQUEST['is_id']; // firstname
-$ln=$_REQUEST['log_name']; // lastname
-$lt=$_REQUEST['log_type']; // age
-$ld=$_REQUEST['log_description']; // services from collect.php
-$du=$_REQUEST['date_uploaded'];
+$isid=$_REQUEST['is_id']; 
+$ln=$_REQUEST['log_name']; 
+$lt=$_REQUEST['log_type']; 
+$ld=$_REQUEST['log_description']; 
 $uby=$_REQUEST['uploaded_by'];
 $fd=$_REQUEST['fix_description'];
 
 include "../../config.php";
-// MYSQL INSERT SYNTAX defined below. The values were taken from the previous pages add.php and collect.php
-// which was recieved here using php $_REQUEST function	
+
 $sql="INSERT INTO tbl_is_log (id,is_id,log_name,log_type,log_description,date_uploaded,uploaded_by,fix_description)
-		VALUES ('$id','$isid','$ln','$lt','$ld','$du','$uby','$fd');";
+		VALUES ('$id','$isid','$ln','$lt','$ld',now(),'$uby','$fd');";
 		
 
-	if (!mysqli_query($con,$sql)) { // executes the query and checks if it was properly executed
-		die ('error in db: '. mysqli_error($con)); // show error
+	if (!mysqli_query($con,$sql)) { 
+		die ('error in db: '. mysqli_error($con)); 
 		}
 	
 echo '<div class="alert alert-success" id="success-alert">
@@ -52,7 +50,7 @@ echo '<div class="alert alert-success" id="success-alert">
 	</div>';
 ?>
 <?php
-mysqli_close($con); // closes the connection to the database
+mysqli_close($con); 
 ?>
             <!-- /.row -->
 			<div class="row">

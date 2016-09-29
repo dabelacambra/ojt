@@ -8,17 +8,8 @@
 ?>
 <?php
 
-/* 
-connection to database (definition):
-$host - define your host here, if using a remote host, specify the url of the hostname
-$db_username - define your database username access here
-$db_password - define your database password access here
-$db_name - define the database name that will be accessed here
-*/
-
 include "../../config.php";
-// placeholder and query executor to get the values from the tables person and services, the results are
-// then placed in $result which will be needed later below	
+
 $result=mysqli_query($con,"select * FROM tbl_is");
 
 ?>
@@ -55,8 +46,6 @@ $result=mysqli_query($con,"select * FROM tbl_is");
                                             <select id="isId" class="form-control" name = "is_id" required>
                                                 <option value="" disabled selected>Please Select</option>									
 												<?php 
-												// fetches the result from $result and be readied to be displayed in html
-												// the format for while syntax is while (parameters) {actions..}
 												while ($row=mysqli_fetch_array($result)) { 
 												?>
 												<td name="is_id"><option value='<?php echo $row['id'] ?><?php echo $row['name']  ?>'><?php echo $row['id'] ?>-<?php echo $row['name']  ?></option></td>											
@@ -74,11 +63,7 @@ $result=mysqli_query($con,"select * FROM tbl_is");
 										<div class="form-group">
 											<label>Log Description</label>
 											<textarea class="form-control" placeholder="Enter Log Desription" type="text" rows="3" name="log_description" required></textarea>
-										</div>
-                                         <div class="form-group">
-                                            <label>Date Changed</label>
-                                            <input class="form-control" placeholder="Enter Uploaded Date" type="date" name="date_uploaded" required>
-                                        </div>	
+										</div>	
 										  <div class="form-group" name="uploaded by">
                                             <label>Changed by</label>
                                             <input class="form-control" placeholder="Enter Uploaded by" type="text" name="uploaded_by" required>

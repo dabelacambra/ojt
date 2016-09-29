@@ -8,18 +8,11 @@
 ?>
 <?php
 
-/* 
-connection to database (definition):
-$host - define your host here, if using a remote host, specify the url of the hostname
-$db_username - define your database username access here
-$db_password - define your database password access here
-$db_name - define the database name that will be accessed here
-*/
+
 $id=$_REQUEST['id'];
 
 include "../../config.php";
-// placeholder and query executor to get the values from the tables person and services, the results are
-// then placed in $result which will be needed later below	
+
 $result=mysqli_query($con,"SELECT * FROM tbl_is_log WHERE id = '$id'");
 
 ?>
@@ -96,56 +89,7 @@ $result=mysqli_query($con,"SELECT * FROM tbl_is_log WHERE id = '$id'");
 				 <a href="javascript:history.back()"><button type="button" class="btn btn-success">Cancel</a>
 <?php } ?>
 <?php mysqli_close($con); ?>
-                                    </form>
-									<script>
-function submitform() {
-  var e= document.getElementById("isId");
-  var strUser = e.options[e.selectedIndex].value;
-  
-  var strUser = e.option[e.selectedIndex].text; 
-  if(strUser==0)
-  {
-	  alert("Please select")
-  }	
-  var f = document.getElementsByName('log_name')[0];
-  if(f.checkValidity()) {
-    f.submit();
-  } else {
-    alert(document.getElementById('example').validationMessage);
-  }
-  var f = document.getElementsByName('log_type')[0];
-  if(f.checkValidity()) {
-	  f.submit();
-  } else{
-	  alert(document.getElementById('example').validationMessage);
-  }
-  var f = document.getElementsByName('log_description')[0];
-  if(f.checkValidity()) {
-	  f.submit();
-  } else {
-	  alert(document.getElementById('example').validationMessage);
-  }
-  var f = document.getElementsByName('date_uploaded')[0];
-  if(f.checkValidity()) {
-	  f.submit();
-  } else {
-	  alert(document.getElementById('example').validationMessage);
-  }
-  var f= document.getElementsByName('uploaded_by')[0];
-  if(f.checkValidity()) {
-	  f.submit();
-  } else {
-	  alert(document.getElementById('example').validationMessage);
-  }
-  var f = document.getElementsByName('fix_description')[0];
-  if(f.checkValidity()) {
-	  f.submit();
-  } else {
-	  alert(document.getElementById('example').validationMessage);
-  }
-  }
-}
-</script>
+</form>
                                 </div>
                                 <!-- /.col-lg-6 (nested) -->
                                 

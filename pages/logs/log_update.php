@@ -31,14 +31,13 @@ $uby=$_REQUEST['uploaded_by'];
 $fd=$_REQUEST['fix_description'];
 
 include "../../config.php";
-// MYSQL INSERT SYNTAX defined below. The values were taken from the previous pages add.php and collect.php
-// which was recieved here using php $_REQUEST function	
+
 $sql="UPDATE tbl_is_log SET log_name='$ln',log_type='$lt',log_description='$ld',date_uploaded='$du',uploaded_by='$uby',fix_description='$fd' WHERE id ='$id'";
 		
 		
 
-	if (!mysqli_query($con,$sql)) { // executes the query and checks if it was properly executed
-		die ('error in db: '. mysqli_error($con)); // show error
+	if (!mysqli_query($con,$sql)) { 
+		die ('error in db: '. mysqli_error($con)); 
 		}
 	
 	echo '<div class="alert alert-success" id="success-alert">
@@ -49,7 +48,7 @@ $sql="UPDATE tbl_is_log SET log_name='$ln',log_type='$lt',log_description='$ld',
 	Record has been updated
 	</span>
 	</div>';
-mysqli_close($con); // closes the connection to the database
+mysqli_close($con); 
 ?>
 
             <!-- /.row -->

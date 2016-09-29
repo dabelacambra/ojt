@@ -8,18 +8,11 @@
 ?>
 <?php
 
-/* 
-connection to database (definition):
-$host - define your host here, if using a remote host, specify the url of the hostname
-$db_username - define your database username access here
-$db_password - define your database password access here
-$db_name - define the database name that will be accessed here
-*/
+
 $id=$_REQUEST['id'];
 
 include "../../config.php";
-// placeholder and query executor to get the values from the tables person and services, the results are
-// then placed in $result which will be needed later below	
+
 $result=mysqli_query($con,"SELECT * FROM tbl_is_log WHERE id = '$id'");
 $result_doc=mysqli_query($con,"select * from tbl_is_log");
 

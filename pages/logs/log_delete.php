@@ -21,21 +21,15 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
-                    <?php
+<?php
 
 $id=$_GET['id'];
 
 
-/* 
-connection to database (definition):
-$host - define your host here, if using a remote host, specify the url of the hostname
-$db_username - define your database username access here
-$db_password - define your database password access here
-$db_name - define the database name that will be accessed here
-*/
+
 
 include "../../config.php";
-// deletes the data from the database where id is equal to the value defined from $id	
+	
 mysqli_query($con,"DELETE FROM tbl_is_log WHERE id = '$id'");
 
 

@@ -42,27 +42,27 @@ $result_region=mysqli_query($con,"select * from lib_regions");
 <div class="col-md-4 col-md-offset-4">
 <div class="login-panel panel panel-default">
 <div class="panel-heading">
-<h3 class="panel-title"><strong>ISMP </strong>Register</h3>
+<h3 class="panel-title"><strong>Registration</h3>
 </div>
 <div class="panel-body">
-<form role="form" action="registervalidate.php" method="get">
+<form role="form" action="registerconfirm.php" method="get">
 <fieldset>
 <input type="hidden" name="uid">
 <div class="form-group">
 <label>Username</label>
-<input class="form-control" placeholder="Username" name="username" type="text" autofocus required>
+<input class="form-control" placeholder="Pick a username" name="username" type="text" autofocus required>
 </div>
 <div class="form-group">
 <label>Password</label>
-<input class="form-control" placeholder="Password" name="password" type="password" required>
+<input class="form-control" placeholder="Create a password" name="password" type="password" required>
 </div>
 <div class="form-group">
 <label>Email</label>
-<input class="form-control" placeholder="Email" name="email" type="text" required>
+<input class="form-control" placeholder="Your email address" name="email" type="text" required>
 </div>
 <div class="form-group">
 <label>Full Name</label>
-<input class="form-control" placeholder="Username" name="user_fullname" type="text" autofocus required>
+<input class="form-control" placeholder="Your full name" name="user_fullname" type="text" autofocus required>
 </div>
 <div class="form-group">
 <label>Region</label>
@@ -77,7 +77,7 @@ while ($row=mysqli_fetch_array($result_region)) {
 </div>
 <div class="form-group">
 <label>Office</label>
-<input class="form-control" placeholder="Office" name="office" type="text">
+<input class="form-control" placeholder="Your office" name="office" type="text">
 </div>
 <button type="submit" class="btn btn-primary btn-block">Submit</button>
 <a href="javascript:history.back()" role="button" class="btn btn btn-warning btn-block">Cancel</button></a>

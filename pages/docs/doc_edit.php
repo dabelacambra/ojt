@@ -61,48 +61,36 @@ if($result == FALSE){
 		<input type="text" name="is_id" class="form-control" value="<?php echo $row['isid'] ?>" disabled>
 		</div>
 		<div class="form-group">
-		<label class="col-md-6 control-label">File Format</label>
-		<select name="fileformat" class="form-control" required>
-		<?php
-        while($row=mysqli_fetch_array($result)) {
-		?>
-		<option value="<?php echo $id;?>" <?php echo ($id == $fileFormat ? 'selected' : '');?> selected><?php echo $fileFormat;?></option>
-		<?php } ?>
-		<?php
-        while ($row=mysqli_fetch_array($result_format)) {
-		?>
-		<option value='<?php echo $row['desc'] ?>'><?php echo $row['desc'] ?></option>
-		<?php } ?>
-		</select>
-		</div>
-		<div class="form-group">
-		<label class="col-md-6 control-label">Uploaded By</label>
-		<select name="uploadedby" class="form-control" required>
-		<?php
-        while($row=mysqli_fetch_array($result)) {
-		?>
-		<option value=" <?php echo $id;?>" <?php echo ($id == $uploadedBy ? 'selected' : '');?> selected><?php echo $uploadedBy;?></option>
-		<?php } ?>
-		<?php
-		while ($row=mysqli_fetch_array($result_uploader)) {
-		?>
-		<option value='<?php echo $row['desc'] ?>'><?php echo $row ['desc'] ?></option>
-		<?php } ?>
-		</select>
-		</div>
-		<div class="form-group">
-        <label class="col-md-6 control-label">Version</label>
-        <select name="version" class="form-control" required>
+	    <label>File Type</label>
+	    <select name="fileformat" class="form-control" required>
+        <option value=""disabled selected>Please Select</option>
         <?php
-        while($row=mysqli_fetch_array($result)) {
-		?>
-		<option value="<?php echo $id;?>" <?php echo ($id == $version ? 'selected' : '');?> selected><?php echo $version;?></option>						
-		<?php } ?>
-		<?php
-		while ($row=mysqli_fetch_array($result_version)) { 
-		?>
-		<option value='<?php echo $row['desc'] ?>'><?php echo $row['desc'] ?></option>												
-		<?php } ?>										
+        while ($row=mysqli_fetch_array($result_format)) {
+	    ?>
+	    <option value='<?php echo $row['desc'] ?>'><?php echo $row['desc'] ?></option>
+	    <?php } ?>
+	    </select>
+	    </div>
+		<div class="form-group">
+	    <label>Uploaded By</label>
+	    <select name="uploadedby" class="form-control" required>
+	    <option value=""disabled selected>Please Select</option>
+	    <?php
+	    while ($row=mysqli_fetch_array($result_uploader)) {
+	    ?>
+	    <option value='<?php echo $row ['desc'] ?>'><?php echo $row ['desc'] ?></option>
+	    <?php } ?>
+	    </select>
+	    </div>
+		<div class="form-group">
+        <label>Versions</label>
+        <select name="version" class="form-control" required>
+        <option value=""disabled selected>Please Select</option>						
+	    <?php
+	    while ($row=mysqli_fetch_array($result)) { 
+	    ?>
+	    <option value='<?php echo $row['desc'] ?>'><?php echo $row['desc'] ?></option>												
+	    <?php } ?>										
         </select>
         </div>	
         <div class="form-group">

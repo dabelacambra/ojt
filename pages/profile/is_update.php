@@ -37,14 +37,13 @@ $url = $_REQUEST['url'];
 $cron = $_REQUEST['cron'];
 $Api = $_REQUEST['api'];
 $trainingUrl = $_REQUEST['training_url'];
-$lastVa = $_REQUEST['last_va'];
 $remarks = $_REQUEST['remarks'];
 $assignedTo = $_REQUEST['assigned_to'];
 $businessOwner = $_REQUEST['business_owner'];
 
 include "../../config.php";
 
-$sql="UPDATE tbl_is SET name='$name',`category`='$category',`desc`='$desc',tracker='$tracker',`access`='$access',`front_end`='$frontEnd',`rdbms`='$rdbms',`url`='$url',`cron`='$cron',`api`='$Api',training_url='$trainingUrl',last_va='$lastVa',remarks='$remarks',assigned_to='$assignedTo',business_owner='$businessOwner' WHERE id ='$id'";
+$sql="UPDATE tbl_is SET name='$name',`category`='$category',`desc`='$desc',tracker='$tracker',`access`='$access',`front_end`='$frontEnd',`rdbms`='$rdbms',`url`='$url',`cron`='$cron',`api`='$Api',training_url='$trainingUrl',last_va=now(),remarks='$remarks',assigned_to='$assignedTo',business_owner='$businessOwner' WHERE id ='$id'";
 	
 		
 
